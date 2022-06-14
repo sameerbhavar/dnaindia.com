@@ -5,43 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos</title>
+  <title>ViralNews</title>
   <style>
-    #container>div {
-      border-bottom: 1px solid #58585a;
-      background-color: #16171a;
-      width: 50%;
-      margin: auto;
-      padding: 10px;
-      text-align: left;
+    * {
+      background-color: #f5f5f5;
     }
 
-    /* H1 HAS BEEN USED FOR VIDEO HEADING */
+    #container>div {
+      display: flex;
+      border: 1px solid #f5f5f5;
+      background-color: white;
+      width: 50%;
+      margin: 10px auto;
+      padding: 10px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    /* H1 HAS BEEN USED FOR PHOTO HEADING */
     h1 {
       /* here margin has been set to bring heading in the middle */
       margin: 0 0 0px 24%;
-      color: #16171a;
       border-bottom: 2px solid #ffde2f;
-      font-family: 'Roboto Slab', sans-serif;
       display: inline;
       font-size: 24px;
+      text-transform: uppercase;
       padding-bottom: 4px;
+      font-family: 'Roboto Slab', sans-serif;
     }
 
     /* H3 Has been used for description of photos */
     #container>div>h3 {
-      color: #cdcbcb;
-      padding: 25px 15px 20px 15px;
-      font-size: 19px;
+      color: #36363c;
       text-align: left;
-      font-weight: 600;
-      line-height: 1.2;
+      font-weight: 400;
+      line-height: 18px;
       font-family: 'Roboto Slab', sans-serif;
       cursor: pointer;
+      font-size: 15px;
+      display: block;
+      margin-left: 10px;
+      background-color: white;
     }
 
     #container>div>img {
       cursor: pointer;
+      width: 25%;
     }
 
     hr {
@@ -65,18 +74,18 @@
     }
 
     button:hover {
-      color: #fad20b;
+      color: #f5ce1f;
     }
   </style>
 </head>
 
 <body>
-  <h1>VIDEOS</h1>
+  <h1>VIRAL</h1>
   <hr>
   <div id="container">
 
   </div>
-  <button>View More Videos</button>
+  <button>More News</button>
 </body>
 
 </html>
@@ -1068,7 +1077,7 @@
       category: "explainer",
     },
     {
-      ima: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/14/2301259-putin-dna.png",
+      img: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/14/2301259-putin-dna.png",
       headline:
         "Vladimir Putin’s bodyguards collecting his poop on foreign trips? Know reason behind claim",
       category: "viralNews",
@@ -1186,7 +1195,7 @@
   let arrByID = homePageData.filter(filterByID)
 
   function filterByID(item) {
-    if (item.category == "videos") {
+    if (item.category == "viralNews") {
       return true
     }
     else {
@@ -1197,12 +1206,12 @@
 
   arrByID.forEach(function (elem) {
     let box = document.createElement("div");
-    let desc = document.createElement("h3");
-    desc.innerText = elem.headline;
-    box.append(desc);
     let Image = document.createElement("img");
     Image.setAttribute("src", elem.img)
     box.append(Image);
+    let desc = document.createElement("h3");
+    desc.innerText = elem.headline;
+    box.append(desc);
     document.querySelector("#container").append(box);
   });
 
