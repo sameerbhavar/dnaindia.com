@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <style>
+        #container>div {
+            border-bottom: 1px solid #58585a;
+            background-color: #16171a;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* H1 HAS BEEN USED FOR VIDEO HEADING */
+        h1 {
+            /* here margin has been set to bring heading in the middle */
+            margin: 0 0 0px 24%;
+            color: #16171a;
+            border-bottom: 2px solid #ffde2f;
+            font-family: 'Roboto Slab', sans-serif;
+            display: inline;
+            font-size: 24px;
+            padding-bottom: 4px;
+        }
+
+        /* H3 Has been used for description of photos */
+        #container>div>h3 {
+            color: #cdcbcb;
+            padding: 25px 15px 20px 15px;
+            font-size: 19px;
+            text-align: left;
+            font-weight: 600;
+            line-height: 1.2;
+            font-family: 'Roboto Slab', sans-serif;
+            cursor: pointer;
+        }
+
+        #container>div>img {
+            cursor: pointer;
+        }
+
+        hr {
+            margin-top: 3px;
+            width: 51%;
+        }
+
+        button {
+            border: 1px solid #000;
+            border-radius: 11px;
+            color: #000;
+            width: 48%;
+            height: 40px;
+            line-height: 40px;
+            margin: 20px auto;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+        }
+
+        button:hover {
+            color: #f5ce1f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>VIDEOS</h1>
+    <hr>
+    <div id="container">
+
+    </div>
+    <button>View More Videos</button>
+</body>
+
+</html>
+<script>
+    let videodata = [
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303939-1655204321-00000003.jpg",
+            description: "ED probe against Rahul Gandhi: Situation is very serious in country, says Ashok Gehlot"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303933-1655204291-00000003.jpg",
+            description: "Delhi: Additional security forces deployed in many areas following Congress protest"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303928-1655204263-00000003.jpg",
+            description: "Anantnag Administration begins full-scale preparation for 'Amarnath Yatra' in Srinagar"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303923-1655204235-00000003.jpg",
+            description: "Assam: Railway Dept, Tinsukia Administration carry out anti-encroachment drive against illegal constructions"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303919-1655204207-00000003.jpg",
+            description: "ED summon to Rahul Gandhi: We are Gandhi’s heirs, ‘Satyagraha’ won’t stop, says Randeep Surjewala"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303881-1655203983-00000003.jpg",
+            description: "PM Modi instructs all departments to recruit 10 lakh people after HR review"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303876-1655203955-00000003.jpg",
+            description: "National Herald case: Randeep Surjewala, Bhupesh Baghel detained during protest against ED probe"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303871-1655203926-00000003.jpg",
+            description: "P Chidambaram takes a dig at PM Modi’s recruitment announcement"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303867-1655203898-00000003.jpg",
+            description: "Rahul Gandhi arrives at AICC office ahead of his appearance before ED"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2303861-1655203857-00000003.jpg",
+            description: "National Herald Case: We are entitled to protest in a democracy, says P Chidambaram"
+        },
+    ];
+    videodata.forEach(function (elem) {
+        let box = document.createElement("div");
+        let desc = document.createElement("h3");
+        desc.innerText = elem.description;
+        box.append(desc);
+        let Image = document.createElement("img");
+        Image.setAttribute("src", elem.image_url)
+        box.append(Image);
+
+        document.querySelector("#container").append(box);
+    });
+
+</script>

@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photos</title>
     <style>
-        #container>div{
+        #container>div {
             border: 1px solid #f5f5f5;
-    background-color: #fff;
-    /* here margin has been set to bring pictures in the middle */
-    
-    width: 50%;
-    margin:auto;
-    padding: 10px;
-    text-align: left;
-    box-shadow: 0 6px 13px 17px #f7f7f7;
+            background-color: #fff;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            text-align: left;
+            box-shadow: 0 6px 13px 17px #f7f7f7;
         }
+
         /* H1 HAS BEEN USED FOR PHOTO HEADING */
-    h1{
-        /* here margin has been set to bring heading in the middle */
-        margin: 0 0 0px 24%;
-        border-bottom: 2px solid #ffde2f;
-        border-bottom: 2px solid #ffde2f;
-        display: inline;
-        font-size: 24px;
-        text-transform: uppercase;
-        padding-bottom: 4px;  
-    }
-    /* H3 Has been used for description of photos */
-    #container>div>h3{
-        color: #36363c;
-    font-size: 20px;
-    text-align: left;
-    font-weight: 400;
-    line-height: 1.2;
-    font-family: 'Roboto Slab',sans-serif;
-    cursor: pointer;
-    }
-    #container>div>img{
-        cursor: pointer;
-    }
-    hr{
-        margin-top: 3px;
-        width: 51%;
-    }
-    button{
-        border: 1px solid #000;
-    border-radius: 11px;
-    color: #000;
-    width: 50%;
-    height: 40px;
-    line-height: 40px;
-    margin: 20px auto;
-    font-size: 13px;
-    cursor: pointer;
-    font-weight: 700;
-    display: block;
-    text-align: center;
-    }
-    button:hover{
-        color: #f5ce1f;
-    }
+        h1 {
+            /* here margin has been set to bring heading in the middle */
+            margin: 0 0 0px 24%;
+            border-bottom: 2px solid #ffde2f;
+            display: inline;
+            font-size: 24px;
+            text-transform: uppercase;
+            padding-bottom: 4px;
+        }
+
+        /* H3 Has been used for description of photos */
+        #container>div>h3 {
+            color: #36363c;
+            font-size: 20px;
+            text-align: left;
+            font-weight: 400;
+            line-height: 1.2;
+            font-family: 'Roboto Slab', sans-serif;
+            cursor: pointer;
+        }
+
+        #container>div>img {
+            cursor: pointer;
+        }
+
+        hr {
+            margin-top: 3px;
+            width: 51%;
+        }
+
+        button {
+            border: 1px solid #000;
+            border-radius: 11px;
+            color: #000;
+            width: 48%;
+            height: 40px;
+            line-height: 40px;
+            margin: 20px auto;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+        }
+
+        button:hover {
+            color: #f5ce1f;
+        }
     </style>
 </head>
+
 <body>
     <h1>PHOTOS</h1>
     <hr>
@@ -72,41 +77,60 @@
     </div>
     <button>More Photos</button>
 </body>
+
 </html>
 <script>
-let photodata=[
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300433-fotojet-2.jpg" ,
-        description:"M. Muralitharan, James Anderson to Anil Kumble: Top 5 bowlers with most wickets in Test cricket"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300587-strawberry-supermoon8-nasa.jpg" ,
-        description:"Strawberry Supermoon 2022: What is special about the celestial event, when and how to watch"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300071-shooting-dna.png" ,
-        description:"After Texas school shooting, what steps are being taken by US to reduce gun violence?"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2299559-mahindra-scorpio-n.jpg" ,
-        description:"2022 Mahindra Scorpio-N interior revealed: Check what’s new in the upcoming SUV"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2298677-pritam-final.jpg" ,
-        description:"Pritam birthday: Brahmastra, Laal Singh Chaddha, Tiger 3, most awaited albums of the composer"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2297977-sushant-final.jpg" ,
-        description:"Sushant Singh Rajput death anniversary: Chaar Kadam, Qaafirana, famous songs of late actor"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2290758-blood.jpg" ,
-        description:"World Blood Donor Day 2022: 5 health benefits of donating blood"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2289915-fotojet-67-1.jpg" ,
-        description:"Viral Photos of the Day: Kiara Advani, Shamita Shetty, Aditya Roy Kapoor pose for paps"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2289470-shweta-gauri.jpg" ,
-        description:"Inside photos of Gauri Khan’s Rome vacation with Shweta Bachchan"},
-    { image_url:"https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2285249-fotojet.jpg" ,
-        description:"With Joe Root scoring his 2nd consecutive Test century, here are the 5 batsman who have scored most Test runs in 2022"},
-];
-photodata.forEach(function(elem)
-    {
-        let box=document.createElement("div");
-        let Image= document.createElement("img");
-        Image.setAttribute("src",elem.image_url)
+    let photodata = [
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300433-fotojet-2.jpg",
+            description: "M. Muralitharan, James Anderson to Anil Kumble: Top 5 bowlers with most wickets in Test cricket"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300587-strawberry-supermoon8-nasa.jpg",
+            description: "Strawberry Supermoon 2022: What is special about the celestial event, when and how to watch"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300071-shooting-dna.png",
+            description: "After Texas school shooting, what steps are being taken by US to reduce gun violence?"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2299559-mahindra-scorpio-n.jpg",
+            description: "2022 Mahindra Scorpio-N interior revealed: Check what’s new in the upcoming SUV"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2298677-pritam-final.jpg",
+            description: "Pritam birthday: Brahmastra, Laal Singh Chaddha, Tiger 3, most awaited albums of the composer"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2297977-sushant-final.jpg",
+            description: "Sushant Singh Rajput death anniversary: Chaar Kadam, Qaafirana, famous songs of late actor"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2290758-blood.jpg",
+            description: "World Blood Donor Day 2022: 5 health benefits of donating blood"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2289915-fotojet-67-1.jpg",
+            description: "Viral Photos of the Day: Kiara Advani, Shamita Shetty, Aditya Roy Kapoor pose for paps"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2289470-shweta-gauri.jpg",
+            description: "Inside photos of Gauri Khan’s Rome vacation with Shweta Bachchan"
+        },
+        {
+            image_url: "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2285249-fotojet.jpg",
+            description: "With Joe Root scoring his 2nd consecutive Test century, here are the 5 batsman who have scored most Test runs in 2022"
+        },
+    ];
+    photodata.forEach(function (elem) {
+        let box = document.createElement("div");
+        let Image = document.createElement("img");
+        Image.setAttribute("src", elem.image_url)
         box.append(Image);
-        let desc=document.createElement("h3");
+        let desc = document.createElement("h3");
         desc.innerText = elem.description;
-        box.append(desc); 
-    document.querySelector("#container").append(box);
+        box.append(desc);
+        document.querySelector("#container").append(box);
     });
 
 </script>
-
