@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanDing Page</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        background-color: #f5f5f5;
+        /* cont-sizing: border-cont; */
+    }
+
+    #lnd>div {
+    /* border: 1px solid #f5f5f5; */
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    /* padding: 10px; */
+    /* text-align: center; */
+    margin-bottom: 15px;
+    /* box-shadow: 0 6px 13px 17px #f7f7f7; */
+    }
+    h1{
+        
+    position:absolute;
+    display: block;
+    top: 10px;
+    left: 15px;
+    margin: auto;
+    background: rgba(255,222,47,.9);
+    padding: 5px 10px;
+    font-family: 'Roboto Slab',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    }
+   
+    #lnd>div>img {
+      cursor: pointer;
+      width: 100%;
+    }
+
+   
+    #lnd>div>h3 {
+      color: #36363c;
+      background-color: white;
+      font-size: 20px;
+      text-align: left;
+      font-weight: 400;
+      line-height: 1.2;
+      padding: 10px;
+      font-family: 'Roboto Slab', sans-serif;
+      cursor: pointer;
+    }
+
+    /* hr {
+      margin-top: 3px;
+      width: 51%;
+    } */
+    </style>
+</head>
+<body>
+    <div id="lnd">
+       <div> <h1>Top News</h1> </div>
+    
+    </div>
+</body>
+</html>
+<script>
+LdData = [
+    {
+        img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2324349-cong-dna.png" ,
+        headline:"National Herald case: Rahul Gandhi quizzed by ED for 3rd straight day, more Congress workers detained amid protests",
+        category: "photos",
+        subCategory:"large"
+    },
+    {
+      img: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2322900-5g-dna.png",
+      headline:
+      "5G rollout in India: Cabinet approves auction of 5G Spectrum, speed 10 times higher than 4G services",
+      category: "photos",
+      subCategory:"small"
+    },
+    {
+      img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2325744-untitled-design-2022-06-15t160034.725.jpg",
+      headline:"Assam: ACP of Guwahati city police injured during Congress protest",
+      category: "photos",
+      subCategory:"small"
+    },
+    {
+      img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2326054-monkeypox-virus-reuters.jpg",
+      headline:"Monkeypox virus to be given a new name, here's why",
+      category: "photos",
+      subCategory: "small"
+    },
+    {
+      img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2325532-brahmastra-srk.jpg",
+      headline:"Brahmastra: Shah Rukh Khan's cameo appearance in larger than life avatar impresses netizens",
+      category: "photos",
+      subCategory: "small"
+    },
+    {
+      img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2326096-oppo.jpg",
+      headline:"Presidential polls: Which parties are attending Mamata Banerjee's Opposition meet?",
+      category: "photos",
+      subCategory: "small"
+    },
+    {
+      img:"https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/06/15/2325701-stet.jpg",
+      headline:"STET Exam 2022: Why did Bihar cancel the recruitment exam this year?",
+      category: "photos",
+      subCategory: "small"
+    },
+
+    ];
+    let landByID = LdData.filter(filterByID)
+
+  function filterByID(item) {
+    if (item.category == "photos") {
+      return true
+    }
+    else {
+      return false;
+    }
+  }
+//   console.log(landByID);
+
+ let displayPage = function(landByID){
+  landByID.forEach(function (elem) {
+    if(elem.category === 'india' ||elem.category === 'sports' || elem.category === 'photos' ||
+     elem.category === 'lifeStyle' || elem.category === 'world'|| elem.category === 'entertainment'){
+
+    }
+    if(elem.subCategory == 'small'){
+    let cont = document.createElement("div");
+    let Image = document.createElement("img");
+    cont.style.display = 'flex';
+    cont.style.padding = '10px';
+    cont.style.boxSizing = 'border-box';
+    cont.style.borderRadius="5px"
+    Image.setAttribute("src", elem.img)
+    Image.style.height = '100px'
+    Image.style.width ='25%'
+    cont.append(Image);
+    let dis = document.createElement("h3");
+    dis.innerText = elem.headline;
+    dis.style.display = 'inline'
+    dis.style.fontSize = '15px'
+    dis.style.fontWeight =  '400'
+    dis.style.lineHeight = '18px'
+    dis.style.color = '#4c4c4c'
+    cont.append(dis);
+    // console.log(cont)
+    document.querySelector("#lnd").append(cont);
+    }else{
+        
+    let cont = document.createElement("div");
+    let Image = document.createElement("img");
+    Image.setAttribute("src", elem.img)
+    cont.append(Image);
+    let dis = document.createElement("h3");
+    dis.innerText = elem.headline;
+    cont.append(dis);
+    // console.log(cont)
+    document.querySelector("#lnd").append(cont);
+    }
+  });
+ }
+
+ displayPage(landByID)
+
+</script>
