@@ -5,37 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World</title>
+    <title>World | World News, Latest International News, Top World News, World Breaking News | Daily News &amp; Analysis</title>
+    <link rel = "icon" href = 
+"https://cdn.dnaindia.com/sites/all/themes/dnaindia/favicon-1016.ico">
     <style>
-        * {
+     * {
             background-color: #f5f5f5;
         }
+        #outerContainer{
+            width: 50%;
+            margin: auto;
+        }
+        #container{
+            width:100%;
+            margin: auto;
+        }
+      
 
-        #container>div {
-            display: flex;
+        #top>div {
+            
             border: 1px solid #f5f5f5;
             background-color: white;
-            width: 50%;
+            display: flex;
             margin: 10px auto;
             padding: 10px;
             text-align: left;
             border-radius: 10px;
         }
+        #bottom>div
+        {
+            border: 1px solid #f5f5f5;
+            background-color: white;
+            display: flex;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;   
+        }
 
         /* H1 HAS BEEN USED FOR PHOTO HEADING */
         h1 {
             /* here margin has been set to bring heading in the middle */
-            margin: 0 0 0px 24%;
+            margin: 0 0 0px 0px;
             border-bottom: 2px solid #ffde2f;
             display: inline;
             font-size: 24px;
             text-transform: uppercase;
-            padding-bottom: 4px;
+            padding-bottom: 8px;
             font-family: 'Roboto Slab', sans-serif;
         }
 
         /* H3 Has been used for description of photos */
-        #container>div>h3 {
+        #container>div>div>h3 {
             color: #36363c;
             text-align: left;
             font-weight: 400;
@@ -48,21 +69,30 @@
             background-color: white;
         }
 
-        #container>div>img {
+        #top>div>img {
+            cursor: pointer;
+            width: 25%;
+        }
+        #bottom>div>img {
             cursor: pointer;
             width: 25%;
         }
 
-        hr {
+        hr:first-child {
             margin-top: 3px;
-            width: 51%;
+            width: 50%;
         }
+        /* hr:last-child
+        {
+            margin-top: 3px;
+            width: 100%;
+        } */
 
-        button {
+       button {
             border: 1px solid #000;
             border-radius: 11px;
             color: #000;
-            width: 48%;
+            width: 100%;
             height: 40px;
             line-height: 40px;
             margin: 20px auto;
@@ -76,16 +106,65 @@
         button:hover {
             color: #f5ce1f;
         }
+        #slidingshow{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    #slidingshow>div>img{
+        width: 90%;
+        margin:5px;
+    }
+    #indi1{
+        display: block;
+    }
+    #indi2{
+        display: block;
+    }
+    h4{
+      /* here margin has been set to bring heading in the middle */
+      margin: 0px 0px 0px 0;
+      border-bottom: 2px solid #ffde2f;
+      display: inline;
+      font-size: 24px;
+      font-family:'Roboto Slab', sans-serif;
+      text-transform: uppercase;
+      padding-bottom: 8px;
+    }
+    h6{
+        font-family: 'Roboto Slab',sans-serif;
+        cursor: pointer;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 12px;
+    width: 90%;
+    }
+    #top{
+        margin-bottom: 10px;
+    }
+    
     </style>
 </head>
 
 <body>
+    <div id="outerContainer">
     <h1>WORLD</h1>
     <hr>
     <div id="container">
-
+        <div id="top"></div>
+        <h4>PHOTOS</h4>
+        <hr>
+        <div id="slidingshow">
+        </div>
+        <button>MORE PHOTOS</button>
+        <!-- Bottom is for news after carosol -->
+        <div id="bottom"></div>
     </div>
     <button>More News</button>
+</div>
 </body>
 
 </html>
@@ -1202,17 +1281,81 @@
             return false;
         }
     }
-    console.log(arrByID);
+    let toparr = [];
+    let bottarr = [];
+    for (let i = 0; i < 4; i++) {
+        toparr.push(arrByID[i]);
+    }
+    for (let j = 4; j < 10; j++) {
+        bottarr.push(arrByID[j]);
+    }
 
-    arrByID.forEach(function (elem) {
+    toparr.forEach(function (elem) {
         let box = document.createElement("div");
+        box.setAttribute("id",box)
         let Image = document.createElement("img");
         Image.setAttribute("src", elem.img)
         box.append(Image);
         let desc = document.createElement("h3");
         desc.innerText = elem.headline;
         box.append(desc);
-        document.querySelector("#container").append(box);
+        document.querySelector("#top").append(box);
     });
+    bottarr.forEach(function (elem) {
+        let box = document.createElement("div");
+        box.setAttribute("id",box)
+        let Image = document.createElement("img");
+        Image.setAttribute("src", elem.img)
+        box.append(Image);
+        let desc = document.createElement("h3");
+        desc.innerText = elem.headline;
+        box.append(desc);
+        document.querySelector("#bottom").append(box);
+    });
+    console.log(bottarr)
+    let slideimg = [
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/15/2329731-hong-kong.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300071-shooting-dna.png",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/13/2282460-elizabeth-dna.png",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/11/2235200-deadlift-thum.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/07/2153647-srilanka-crisis9-reuters.jpg"]
+    let slideimgdesc = [
+        "World's top 5 expensive cities to live in",
+        "After Texas school shooting, what steps are being taken by US to reduce gun violence?",
+        "Queen Elizabeth II becomes world’s second longest-reigning monarch: Know how she rose to power",
+        "Man deadlifts 129 kg with one finger to break Guinness World Record",
+        "How Sri Lankan government messed with economic data?"
+    ]
+    function slidingimage() {
+        let i = 0;
+        let j = 1;
+
+        let slidingshow = document.getElementById("slidingshow");
+        let indi1 = document.createElement("div")
+        let indi2 = document.createElement("div")
+        let image = document.createElement("img");
+        let imagedesc = document.createElement("h6");
+        let image2 = document.createElement("img");
+        let image2desc = document.createElement("h6");
+        setInterval(function () {
+            if (slideimg.length == j) {
+                i = 0;
+                j = 1;
+            }
+            image.src = slideimg[i]
+            indi1.append(image)
+            imagedesc.innerText = slideimgdesc[i]
+            indi1.append(imagedesc)
+
+            image2.src = slideimg[j]
+            indi2.append(image2)
+            image2desc.innerText = slideimgdesc[j]
+            indi2.append(image2desc)
+            i++;
+            j++;
+            slidingshow.append(indi1, indi2)
+        }, 2000)
+    }
+    slidingimage();
 
 </script>
