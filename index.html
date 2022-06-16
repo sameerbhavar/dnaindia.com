@@ -87,7 +87,7 @@
       }
       #container > hr {
         margin-top: 3px;
-        width: 51%;
+        width: 100%;
       }
 
       h6 {
@@ -1327,16 +1327,19 @@
     landByID.forEach(function (elem, index) {
       let cont = document.createElement("div");
 
-      if (
-        elem.category === "india" ||
-        elem.category === "sports" ||
-        elem.category === "photos" ||
-        elem.category === "lifeStyle" ||
-        elem.category === "world" ||
-        elem.category === "entertainment"
-      ) {
-        if (index === 0) {
-          let h2 = document.createElement("h2");
+      if (index === 0) {
+        let h2 = document.createElement("h2");
+        if (elem.category === "latestNews") {
+          h2.innerText = "";
+          let hr = document.createElement("hr");
+          cont = document.createElement("div");
+          let Image = document.createElement("img");
+          Image.setAttribute("src", elem.img);
+          let dis = document.createElement("h3");
+          dis.innerText = elem.headline;
+          cont.append(h2, hr, Image, dis);
+          document.querySelector("#lnd").append(cont);
+        } else {
           h2.innerText = elem.category.toUpperCase();
           let hr = document.createElement("hr");
           hr.style.marginBottom = "20px";
@@ -1347,35 +1350,52 @@
           dis.innerText = elem.headline;
           cont.append(h2, hr, Image, dis);
           document.querySelector("#lnd").append(cont);
-        } else {
-          let cont = document.createElement("div");
-          let Image = document.createElement("img");
-          cont.style.display = "flex";
-          cont.style.padding = "10px";
-          cont.style.boxSizing = "border-box";
-          cont.style.borderRadius = "5px";
-          Image.setAttribute("src", elem.img);
-          Image.style.height = "100px";
-          Image.style.width = "25%";
-          let dis = document.createElement("h3");
-          dis.innerText = elem.headline;
-          dis.style.display = "inline";
-          dis.style.fontSize = "15px";
-          dis.style.fontWeight = "400";
-          dis.style.lineHeight = "18px";
-          dis.style.color = "#4c4c4c";
-
-          let button = document.createElement("button");
-          button.innerText = `MORE ${elem.category.toUpperCase()} NEWS`;
-          cont.append(Image, dis);
-          document.querySelector("#lnd").append(cont);
         }
-        // document.querySelector("#lnd").append(cont);
+      } else {
+        let cont = document.createElement("div");
+        let Image = document.createElement("img");
+        cont.style.display = "flex";
+        cont.style.padding = "10px";
+        cont.style.boxSizing = "border-box";
+        cont.style.borderRadius = "5px";
+        Image.setAttribute("src", elem.img);
+        Image.style.height = "100px";
+        Image.style.width = "25%";
+        let dis = document.createElement("h3");
+        dis.innerText = elem.headline;
+        dis.style.display = "inline";
+        dis.style.fontSize = "15px";
+        dis.style.fontWeight = "400";
+        dis.style.lineHeight = "18px";
+        dis.style.color = "#4c4c4c";
+
+        let button = document.createElement("button");
+        button.innerText = `MORE ${elem.category.toUpperCase()} NEWS`;
+        cont.append(Image, dis);
+        document.querySelector("#lnd").append(cont);
       }
     });
   };
 
   // displayPage(landByID);
+
+  // Main
+
+  let mainSort = homePageData.filter(function (item) {
+    if (item.category == "latestNews") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  let mainArr = [];
+  for (let i = 0; i <= 6; i++) {
+    mainArr.push(mainSort[i]);
+  }
+
+  console.log(mainArr);
+  displayPage(mainArr);
 
   //India
 
@@ -1483,21 +1503,21 @@
 
   // Sliding img
 
-  let slideimg = [
+  let slideimg1 = [
     "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227966-untitled-design-2022-06-10t135810.780.jpg",
     "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227788-rashtrapati-bhavan-new.jpg",
     "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2214033-rs-polls.jpg",
     "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/08/2183816-new-project-32.jpg",
     "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/07/2156754-untitled-design-2022-06-06t231358.719.jpg",
   ];
-  let slideimgdesc = [
+  let slideimgdesc1 = [
     "In Pic: Indian Air Force's formidable fighter jet fleet: Sukhoi, Tejas, Migs and More",
     "In pics: Rashtrapati Bhavan, spread over 2 lakh square feet awaits new President",
     "Rajya Sabha Elections on June 10: All you need to know",
     "Shocking photos of Delhi Metro parking fire: 90 vehicles gutted",
     "In Pics: Check out the transport fleet of the Indian Air Force",
   ];
-  function slidingimage() {
+  function slidingimage(slideimg, slideimgdesc, text) {
     let i = 0;
     let j = 1;
     let outerContainer = document.createElement("div");
@@ -1509,9 +1529,9 @@
     container.setAttribute("id", "container");
 
     let subheading = document.createElement("h4");
-    subheading.innerText = "PHOTOS";
+    subheading.innerText = text;
     subheading.setAttribute("id", "carolHead");
-    button.innerText = `MORE ${subheading.innerText}`;
+    button.innerText = `MORE ${text}`;
     let hr = document.createElement("hr");
 
     let slidingshow = document.createElement("div");
@@ -1551,7 +1571,23 @@
       outerContainer.append(container, button);
 
       document.querySelector("#lnd").append(outerContainer);
-    }, 2000);
+    }, 10000);
   }
-  slidingimage();
+  slidingimage(slideimg1, slideimgdesc1, "PHOTOS");
+
+  let slideimg2 = [
+    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2301209-fb476beb-441f-4801-a79b-bda00bca84aa.jpg",
+    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300771-1655189641-00000003.jpg",
+    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300931-80608893-39f8-46f9-b31b-c246387b9140.jpg",
+    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2301240-8d8dbf26-f661-4709-a8b4-a7ac1b056e1d.jpg",
+    "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/14/2300757-1655189582-00000003.jpg",
+  ];
+  let slideimgdesc2 = [
+    `DNA: Gandhi families' 'satyagraha politics' in ED's inquiry`,
+    "DNA: Congress turns ED inquiry into a 'political celebration",
+    "DNA: Rahul Gandhi misuses 'satyagraha' in today's politics?",
+    "DNA: Herald Case -- Is Rahul Gandhi really a descendant of Mahatma Gandhi?",
+    "National Herald case: Congress will continue this fight tomorrow, says Harish Rawat",
+  ];
+  slidingimage(slideimg2, slideimgdesc2, "VIDEO");
 </script>
