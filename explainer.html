@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entertainment | Entertainment News, Latest Celebrity News &amp; Gossips | Movie News &amp; Reviews | Celebrity News, Photos &amp; Videos | DNAIndia.com</title>
+    <title>Explainer | DNA India</title>
     <link rel = "icon" href = 
 "https://cdn.dnaindia.com/sites/all/themes/dnaindia/favicon-1016.ico">
     <style>
@@ -151,7 +151,7 @@
 
 <body>
     <div id="outerContainer">
-    <h1>ENTERTAINMENT</h1>
+    <h1>EXPLAINER</h1>
     <hr>
     <div id="container">
         <div id="top"></div>
@@ -1274,7 +1274,7 @@
     let arrByID = homePageData.filter(filterByID)
 
     function filterByID(item) {
-        if (item.category == "entertainment") {
+        if (item.category == "explainer") {
             return true
         }
         else {
@@ -1286,7 +1286,7 @@
     for (let i = 0; i < 4; i++) {
         toparr.push(arrByID[i]);
     }
-    for (let j = 4; j < 8; j++) {
+    for (let j = 4; j < 10; j++) {
         bottarr.push(arrByID[j]);
     }
 
@@ -1312,19 +1312,19 @@
         box.append(desc);
         document.querySelector("#bottom").append(box);
     });
+    console.log(bottarr)
     let slideimg = [
-        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/16/2339946-thumb.jpg",
-        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/15/2331990-fotojet-2022-06-15t225944.384-1.jpg",
-        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/15/2324459-fotojet-2-1.jpg",
-        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/15/2322679-fotojet-1-1.jpg",
-        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/15/2321429-kkk-thumbnail.jpg"
-      ]
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227966-untitled-design-2022-06-10t135810.780.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2227788-rashtrapati-bhavan-new.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/10/2214033-rs-polls.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/08/2183816-new-project-32.jpg",
+        "https://cdn.dnaindia.com/sites/default/files/styles/half/public/2022/06/07/2156754-untitled-design-2022-06-06t231358.719.jpg"]
     let slideimgdesc = [
-        "Inside photos of Sonam Kapoor's baby shower: Personalised food menu, tasteful decor",
-        "Viral Photos of the Day: Poonam Pandey sizzles in glamorous dress, Kiara Advani, Malaika Arora pose for paps",
-        "Nayanthara, Samantha Ruth Prabhu, Rashmika Mandanna: Know whopping fee South actresses charge per film",
-        "Vikram, KGF Chapter 2, RRR, Pushpa The Rise, Master: A look at recent South blockbusters",
-        "Khatron Ke Khiladi 12: Kanika Mann, Chetna Pande, Erika Packard's sizzling hot bikini photos set internet ablaze"
+        "In Pic: Indian Air Force's formidable fighter jet fleet: Sukhoi, Tejas, Migs and More",
+        "In pics: Rashtrapati Bhavan, spread over 2 lakh square feet awaits new President",
+        "Rajya Sabha Elections on June 10: All you need to know",
+        "Shocking photos of Delhi Metro parking fire: 90 vehicles gutted",
+        "In Pics: Check out the transport fleet of the Indian Air Force"
     ]
     function slidingimage() {
         let i = 0;
@@ -1337,7 +1337,6 @@
         let imagedesc = document.createElement("h6");
         let image2 = document.createElement("img");
         let image2desc = document.createElement("h6");
-       
         setInterval(function () {
             if (slideimg.length == j) {
                 i = 0;
