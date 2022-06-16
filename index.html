@@ -98,6 +98,26 @@
         font-size: 12px;
         width: 90%;
       }
+
+      /* button */
+      #outCon > button {
+        border: 1px solid #000;
+        border-radius: 11px;
+        color: #000;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        margin: 20px auto;
+        font-size: 13px;
+        cursor: pointer;
+        font-weight: 700;
+        display: block;
+        text-align: center;
+      }
+
+      #outCon > button:hover {
+        color: #f5ce1f;
+      }
     </style>
   </head>
   <body>
@@ -1318,12 +1338,14 @@
         if (index === 0) {
           let h2 = document.createElement("h2");
           h2.innerText = elem.category.toUpperCase();
+          let hr = document.createElement("hr");
+          hr.style.marginBottom = "20px";
           cont = document.createElement("div");
           let Image = document.createElement("img");
           Image.setAttribute("src", elem.img);
           let dis = document.createElement("h3");
           dis.innerText = elem.headline;
-          cont.append(h2, Image, dis);
+          cont.append(h2, hr, Image, dis);
           document.querySelector("#lnd").append(cont);
         } else {
           let cont = document.createElement("div");
@@ -1478,12 +1500,18 @@
   function slidingimage() {
     let i = 0;
     let j = 1;
+    let outerContainer = document.createElement("div");
+    outerContainer.setAttribute("id", "outCon");
+
+    let button = document.createElement("button");
+
     let container = document.createElement("div");
     container.setAttribute("id", "container");
 
     let subheading = document.createElement("h4");
     subheading.innerText = "PHOTOS";
     subheading.setAttribute("id", "carolHead");
+    button.innerText = `MORE ${subheading.innerText}`;
     let hr = document.createElement("hr");
 
     let slidingshow = document.createElement("div");
@@ -1520,8 +1548,9 @@
 
       slidingshow.append(indi1, indi2);
       container.append(subheading, hr, slidingshow);
+      outerContainer.append(container, button);
 
-      document.querySelector("#lnd").append(container);
+      document.querySelector("#lnd").append(outerContainer);
     }, 2000);
   }
   slidingimage();
