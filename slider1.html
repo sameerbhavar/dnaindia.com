@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    #sliderBox{
+        display: flex;
+    }
+    #sliderBox>div>p:first-child{
+    font-size: 13px;
+    font-weight: bolder;
+    color: #313131;
+    width: 160px;
+    height: 50px;
+    position: relative;
+    background-color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+    font-family: 'Roboto Slab',sans-serif;
+    }
+    #sliderBox>div:nth-child(2){
+        background-color: #313131;
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 0;
+    padding-left: 10px;
+    height: 50px;
+    top: 13px;
+    left: -3px;
+    align-items: center;
+}
+
+    #sliderBox>div:nth-child(2)>a{ 
+    font-family: 'Roboto Slab',sans-serif;
+    font-size: 15px;
+    color: #fff!important;
+    font-weight: 300;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    }
+    #carousel-btns
+    {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    display: flex;
+    width: 115px;
+    padding: 13px;
+    justify-content: center;
+    }
+    .prev_carousel {
+    position: absolute;
+    left: 24px;
+    top: 16px;
+}
+#toggleCarousel {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    border-radius: 3px;
+    border: 0;
+    background-color: rgb(124 123 123);
+    top: 4px;
+}
+.next_carousel {
+    position: absolute;
+    right: 24px;
+    top: 16px;
+}
+#carousel-btns img {
+    vertical-align: middle;
+    border-style: none;
+    font-size: 10px;
+}
+.carousel-pause {
+    left: 5px;
+    top: 11px;
+    content: " ";
+    height: 10px;
+    width: 9px;
+    position: absolute;
+    pointer-events: none;
+    margin-top: -6px;
+    border-style: dashed;
+    border-width: 0 3px 0 3px;
+    border-color: #fff;
+}
+.carousel-play {
+    left: 8px;
+    top: 10px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136,183,213,0);
+    border-left-color: #fff;
+    border-width: 6px;
+    margin-top: -6px;
+}
+</style>
+<body>
+    <div id="sliderBox">
+        <div>
+            <p>Top News</p>
+        </div>
+        <div>
+            <a href="#" id="sliderText">National Herald case: Rahul Gandhi makes late night visit to hospital ahead of ED questioning</a>
+            <div id="carousel-btns">
+              <a class="prev_carousel" href="#">
+                <img src="https://english.cdn.zeenews.com/static/public/prev_carousel.svg" alt="Previous"></a>
+                    <button id="toggleCarousel"><span class="carousel-pause"></span></button>
+              <a class="next_carousel" href="#" >
+                <img src="https://english.cdn.zeenews.com/static/public/next_carousel.svg" alt="Previous">
+              </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+let text = document.querySelector('#sliderText');
+let prevBtn= document.querySelector('.prev_carousel');
+let nextBtn = document.querySelector('.next_carousel');
+let textNum=0;
+//let play=true;
+let textArray=
+[
+    'National Herald case: Rahul Gandhi makes late night visit to hospital ahead of ED questioning',
+    'Jan Mohammad Lone, LeT terrorist involved in bank managers murder, killed in encounter in Shopian',
+    'Home Ministry begins process of central government recruitment for 10 lakh vacancies',
+    'Shraddha Kapoors brother Siddhanth Kapoor claims his friends gave him drinks laced with drugs'
+];
+prevBtn.addEventListener('click',function()
+{
+if(textNum===0)
+{
+textNum=textArray.length-1;
+}else{
+    textNum--;
+}
+text.innerText=textArray[textNum];
+});
+
+nextBtn.addEventListener('click',function()
+{
+if(textNum===textArray.length-1)
+{
+textNum=0;
+}else{
+    textNum++;
+}
+text.innerText=textArray[textNum];
+});
+
+var playing = true;
+var pauseButton = document.querySelector('#toggleCarousel');
+
+function pauseSlideshow(){
+	pauseButton.innerHTML = 'Play';
+	playing = false;
+	clearInterval(slideInterval);
+}
+
+
+//Auto slide code
+  let slideIndex = 0;
+ autoSlide()
+
+function autoSlide(){
+    let i=0;
+    let text = document.querySelector('#sliderText');
+setInterval(function(){
+    if(textArray.length==i)
+    {
+        i=0;
+    }
+    text.innerText=textArray[i];
+    text.removeAttribute('class');
+    text.setAttribute('class','animate__animated animate__fadeInRight')
+    i++;
+},2000);
+}
+
+
+
+
+function pauseFun()
+{
+    play=false;
+    let btn=document.querySelector('#toggleCarousel>span');
+    pauseButton.innerHTML = 'Play';
+	clearInterval(slideInterval);
+    
+    console.log('sameer')
+}
+
+function playSlideshow(){
+	pauseButton.innerHTML = 'Pause';
+	playing = true;
+	slideInterval = setInterval(autoSlide,2000);
+}
+
+pauseButton.addEventListener('click',function(){
+	if(playing){ pauseSlideshow(); }
+	else{ playSlideshow(); }
+});
+
+
+
+
+
+</script>
+</html>
