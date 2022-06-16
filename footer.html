@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Navbar</title>
+		<style>
+			body {
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: 'Roboto Slab',sans-serif;
+}
+            
+        #footer-content {
+            margin-top: 25px;
+            background: #1c1c1c;
+            padding: 15px 0;
+            display: block;
+        }
+        #footer-box {
+            border-bottom: 1px solid #3b3a3a;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }            
+        #footer-box > div {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .nav {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+		.nav .nav-item {
+            font-size: 14px;
+            line-height: 35px;
+}	
+
+.dna-logo {
+    width: 230px;
+    
+}
+.dna-logo img {
+    width: 89px;
+    height: 41px;
+    font-size: 10px;
+    vertical-align: middle;
+    padding-left: 40px;
+}
+
+.nav .nav-item {
+    font-size: 14px;
+    line-height: 35px;
+}
+#nav-item a {
+    color: #8e8e8e;
+    font-size: 14px;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+#middle-footer-box {
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #3b3a3a;
+    margin-bottom: 10px;
+}
+
+#middle-footer-box > div {
+    display: flex; 
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#middle-footer-box > div > div {
+    display: contents;
+}
+#middle-footer-box>div>div>div {
+    width: 190px;
+    padding-left: 37px;
+}
+#middle-footer-box>div>div>div>p {
+    font-size: 18px;
+    color: #8e8e8e;
+    margin: 0;
+}
+p+ul {
+    padding: 0;
+    margin: 0;
+}
+p+ul>li {
+    display: inline;
+    padding: 4px;
+    font-size: 5px;
+    
+}
+p+ul>li>a {
+    color: #8e8e8e!important;
+    text-decoration: none
+}
+
+p+ul>li>a>img {
+    height: 24px;
+    width: 26px;
+    opacity: .4;
+    font-size: 10px;
+    margin-top: 10px;
+    padding-bottom: -10px;
+    
+}
+
+#footer-box {
+    border-bottom: 1px solid #3b3a3a;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+#footer-box>div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#footer-box>div>ul>li {
+    font-size: 14px;
+    line-height: 35px;
+}
+.final-footer-box {
+    width: 190px;
+    margin-top: -19px;
+    padding-left: 35px;
+}
+
+.final-footer-box p {
+    font-size: 17px;
+    color: #8e8e8e;
+    font-weight: 500;
+}
+
+.footer-end p {
+    font-size: 12px;
+    text-align: center;
+    color: #8e8e8e;
+    margin-bottom: 0;
+}
+
+		</style>
+	</head>
+	<body>
+        
+
+
+ <footer>
+            <div id="footer-content">
+              
+                    <div id="footer-box">
+                        <div>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <div class="dna-logo">
+                                        <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="">
+                                     </div>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/india">INDIA</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/world">WORLD</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/business">BUISNESS</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/technology">TECHNOLOGY</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/sports">SPORTS</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/cricket">CRICKET</a>
+                                 </li>
+ 
+                                 <li id="nav-item">
+                                     <a href="https://www.dnaindia.com/entertainment">ENTERTAINMENT</a>
+                                 </li>
+                                
+    
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div id="middle-footer-box">
+                        <div>
+                            <div>
+                                <div class="left-text">
+                                    <p>FOLLOW US ON</p>
+
+                                    <ul class="middle-nav">
+                                        <li>
+                                            <a href="https://www.facebook.com/dnaindia" target="_blank">
+                                            <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/icon-facebook.svg" alt="">
+                                            </a>
+                                        </li>
+ 
+                                        <li>
+                                         <a href="https://twitter.com/dna"target="_blank">
+                                         <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/icon-twitter.svg" alt="">
+                                         </a>
+                                     </li>
+ 
+                                     <li>
+                                         <a href="https://www.youtube.com/channel/UCIRAYFbJmrP--jyrC9MAIWQ/videos" target="_blank">
+                                             <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/youtube-white.svg" alt="">
+                                             </a>
+                                         
+                                     </li>
+                                         
+             
+                                    </ul>
+                                </div>
+
+                                <ul class="nav">
+                                    
+    
+                                    <li id="nav-item">
+                                        <a href="https://www.dnaindia.com/about">ABOUT DNA</a>
+                                    </li>
+    
+                                    <li id="nav-item">
+                                        <a href="https://www.dnaindia.com/contact">CONTACT US</a>
+                                    </li>
+    
+                                    <li id="nav-item">
+                                        <a href="https://www.dnaindia.com/investors/index.html">INVESTORS</a>
+                                    </li>
+    
+                                    <li id="nav-item">
+                                        <a href="https://www.dnaindia.com/advertise">ADVERTISE</a>
+                                    </li>
+    
+                                    <li id="nav-item">
+                                        <a href="https://www.dnaindia.com/privacy-policy">PRIVACY-POLICY</a>
+                                    </li>
+    
+        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                <div id="footer-box">
+                    <div class="row">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <div class="final-footer-box">
+                                <p>PARTNER SITE</p>
+                            </div>
+                        </li>
+
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/">ZEE NEWS</a>
+                        </li>
+                    
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/hindi">HINDI NEWS</a>
+                        </li>
+
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/marathi">MARATHI NEWS</a>
+                        </li>
+
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/bengali">BENGALI NEWS</a>
+                        </li>
+
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/tamil">TAMIL NEWS</a>
+                        </li>
+
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://zeenews.india.com/malayalam">MALAYALAM NEWS </a>
+                        </li>
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://www.zeebiz.com/">ZEE BUISNESS</a>
+                        </li>
+                        <li id="nav-item">
+                            <a class="nav-link" href="https://www.wionews.com/">WION</a>
+                        </li>
+                            
+                    </ul>
+                    </div>
+                </div>
+
+                <div class="footer-end">
+                    <p>©1998-2022 INDIA DOT COM PRIVATE LIMITED, ALL RIGHTS RESERVED.</p>
+                </div>
+
+
+
+
+                </div>
+            
+
+        </footer>
+		
+		
+	</body>
+</html>
+
+

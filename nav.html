@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: 'Roboto Slab',sans-serif;
+}
+
+    header {
+    
+    display: block;
+    border-bottom: 1px solid #d3d4de;
+    background: #ffde2f;
+    box-shadow: 0 2px 8px 1px rgb(0 0 0 / 20%);
+}
+
+header > div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    height: 64px;
+}
+
+div > div {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div > div > li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 14px;
+    margin-left: 14px;
+    padding-right: 22px;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #4c4c4c;
+}
+div > div > li > a > img {
+    font-size: 10px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+li>:nth-child(2) {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 5px 14px;
+    border-radius: 50px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+    position: relative;
+    top: -14px;
+}
+
+li>:nth-child(2):hover {
+    background-color: black;
+    color: white;
+}
+
+#right-menu {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+
+/* #right-menu + a {
+    display: flex;
+} */
+
+#right-menu input[type='search'] {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#right-menu  img {
+    width: 24px;
+    padding-right: 20px;
+
+}
+/* #searchBar {
+    display: none;
+    padding-right: 120px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    
+    
+} */
+
+  
+ .btn {
+    width: 50px;
+    height: 40px;
+    /* margin-right: 5px; */
+    background: #313131;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+}
+.search_box {
+    position: absolute;
+    top: 50px;
+    z-index: 9;
+    right: 20px;
+    border: 1px solid #d5d1d1;
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 16%);
+    width: 355px;
+    height: 52px;
+}
+
+.search-arrow {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    right: 58px;
+    border: 0.75rem solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+    right: 16px;
+}
+
+.search_box form {
+    display: flex;
+}
+
+.search_box form input {
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    z-index: 1;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    outline: 0;
+    color: #2c2d31;
+    height: 42px;
+    padding-right: 10px;
+}
+
+.search_btn1 {
+    width: 60px;
+    height: 50px;
+    margin-left: 7rem;
+     
+    background: #313131;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+}
+.search_box {
+    display: none;
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+    <header>
+
+    <div>
+        <div>
+            <div>
+                <li>
+                    <a href="https://www.dnaindia.com/">
+                        <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="">
+                    </a>
+                    <a href="https://www.dnaindia.com/hindi">हिंदी में पढ़ें</a>
+                </li>
+            </div>
+        </div>
+
+
+        <div class="search_box">
+            <div class="search-arrow"></div>
+            <form action="/search" id="search-form" method="get">
+                <input type="text" class="input-search" id="searchBar" placeholder="Search on DNA...">
+                <button type="submit" class="search_btn1">GO</button>
+            </form>
+            </div>
+
+<div id="right-menu">
+    <a href="" class="icon-search" aria-hidden="true">
+   <!-- <input type="search" placeholder="Search on DNA" id="searchBar"> -->
+    <img src="https://english.cdn.zeenews.com/static/public/menusearch.svg" alt="" id="image"> 
+</a>
+</div>
+
+
+
+    </div>
+
+    </header>
+</body>
+</html>
+
+
+<!-- <script>
+document.querySelector('#image').addEventListener('click', myFunction)
+let count = 0;
+function myFunction(event) {
+count++;
+console.log(count)
+if(count%2==1) {
+    document.querySelector('#searchBar').style.display="block"
+}else {
+    document.querySelector('#searchBar').style.display="none"
+}
+    event.preventDefault()
+    let val = document.querySelector('#searchBar').value
+    //document.querySelector('#searchBar').style.display="block"
+
+}
+
+
+</script> -->
+
+
+<script>
+      document.querySelector('#image').addEventListener('click', myFunction)
+let count = 0;
+function myFunction(event) {
+count++;
+console.log(count)
+if(count%2==1) {
+    document.querySelector('.search_box').style.display="block"
+}else {
+    document.querySelector('.search_box').style.display="none"
+}
+    event.preventDefault()
+    let val = document.querySelector('.search_box').value
+    //document.querySelector('#searchBar').style.display="block"
+
+}
+</script>
