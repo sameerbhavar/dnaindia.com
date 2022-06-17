@@ -14,7 +14,7 @@ body {
     font-family: 'Roboto Slab',sans-serif;
 }
 
-    header {
+header {
     
     display: block;
     border-bottom: 1px solid #d3d4de;
@@ -22,7 +22,7 @@ body {
     box-shadow: 0 2px 8px 1px rgb(0 0 0 / 20%);
 }
 
-header > div {
+#first {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@ header > div {
     height: 64px;
 }
 
-div > div {
+#second > div {
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,7 +39,7 @@ div > div {
     justify-content: space-between;
 }
 
-div > div > li {
+#second > div > li {
     list-style-type: none;
     display: inline-block;
     margin-right: 14px;
@@ -47,11 +47,11 @@ div > div > li {
     padding-right: 22px;
     position: relative;
 }
-a {
+.link {
     text-decoration: none;
     color: #4c4c4c;
 }
-div > div > li > a > img {
+.dnaLogo {
     font-size: 10px;
     height: 40px;
     margin-top: 10px;
@@ -68,6 +68,7 @@ li>:nth-child(2) {
     margin-left: 25px;
     position: relative;
     top: -14px;
+    text-decoration: none;
 }
 
 li>:nth-child(2):hover {
@@ -81,9 +82,7 @@ li>:nth-child(2):hover {
     font-size: 10px;
 }
 
-/* #right-menu + a {
-    display: flex;
-} */
+
 
 #right-menu input[type='search'] {
     margin-right: 10px;
@@ -97,14 +96,6 @@ li>:nth-child(2):hover {
     padding-right: 20px;
 
 }
-/* #searchBar {
-    display: none;
-    padding-right: 120px;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    
-    
-} */
 
   
  .btn {
@@ -193,12 +184,12 @@ li>:nth-child(2):hover {
 <body>
     <header>
 
-    <div>
-        <div>
+    <div id="first">
+        <div id="second">
             <div>
                 <li>
-                    <a href="https://www.dnaindia.com/">
-                        <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="">
+                    <a href="https://www.dnaindia.com/" class="link">
+                        <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="" class="dnaLogo">
                     </a>
                     <a href="https://www.dnaindia.com/hindi">हिंदी में पढ़ें</a>
                 </li>
