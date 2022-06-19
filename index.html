@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      DNA India | Latest News, Live Breaking News on India, Politics, World,
+      Business, Sports, Bollywood
+    </title>
+    <link
+      rel="icon"
+      href="https://cdn.dnaindia.com/sites/all/themes/dnaindia/favicon-1016.ico"
+    />
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
+      body{
+        background-color: #ffde2f;
+      }
+      img {
+        display: block;
+        height: 80px;
+        background-color: #ffde2f;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      form {
+        /* border: 1px solid blue; */
+        background-color: rgb(235, 231, 133);
+        width: 30%;
+        margin: auto;
+        padding: 25px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 15px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        resize: vertical;
+      }
+
+      h3 {
+        text-align: center;
+        margin-bottom: 35px;
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+      form + p {
+        text-align: center;
+        margin-top: 6px;
+        color: gray;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: gray;
+        border-radius: 5px;
+        border: none;
+        background-color: #e8eaed;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+      div {
+        /* border: 1px solid blue; */
+        width: 65%;
+        margin: auto;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-evenly;
+        font-weight: 600;
+      }
+      div > p + p > a {
+        text-decoration: none;
+        color: #017afe;
+      }
+      br + p {
+        /* border: 1px solid red; */
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        color: gray;
+        margin-top: 20px;
+      }
+      br + p > a {
+        color: #017afe;
+      }
+      br + p + p {
+        /* border: 1px solid red; */
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        color: gray;
+        margin-bottom: 20px;
+      }
+      br + p + p > a {
+        color: #017afe;
+      }
+      input[type="submit"]:hover {
+        background-color: #8be211;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="DNA logo" />
+    
+    <form action="">
+      <h3>Sign Up</h3>
+      <label for="">Full name</label><br />
+      <input
+        type="text"
+        placeholder="Enter your full name"
+        id="fullname"
+        name="fullname"
+      />
+      <br />
+      <label for="">Email</label> <br />
+      <input type="email" placeholder="Enter email" id="email" name="email" />
+      <br />
+      <label for="">Password</label><br />
+      <input
+        type="password"
+        placeholder="Enter password"
+        id="password"
+        name="password"
+      />
+      <br />
+      <p>
+        By signing up, I accept the DNA INDIA
+        <a href="https://www.dnaindia.com/privacy-policy" target="_blank"
+          >Terms of Service</a
+        >
+        and
+      </p>
+      <p>
+        acknowledge the
+        <a href="https://www.dnaindia.com/privacy-policy" target="_blank"
+          >Privacy Policy.</a
+        >
+      </p>
+      <input type="submit" value="SIGN UP" />
+      <div>
+        <p>Already have an account?</p>
+        <p><a href="login.html">Login</a></p>
+      </div>
+    </form>
+    <p>©1998-2022 INDIA DOT COM PRIVATE LIMITED, ALL RIGHTS RESERVED.</p>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", signIn);
+  let details = JSON.parse(localStorage.getItem("fromData")) || [];
+
+  function signIn(event) {
+    event.preventDefault();
+
+    if(document.querySelector("#fullname").value.trim()=== ""){
+      alert("Full name is Required");
+      document.querySelector("#fullname").focus();
+      return false;
+    }
+    if(document.querySelector("#email").value.trim()=== ""){
+      alert("Email is Required");
+      document.querySelector("#email").focus();
+      return false;
+    }
+    if(document.querySelector("#password").value.trim()=== ""){
+      alert("Password is Required");
+      document.querySelector("#password").focus();
+      return false;
+    }
+
+    if(details){
+      let emailExist = false;
+      details.map(function(detail) {
+        if(detail['Email'] === document.querySelector("#email").value.trim()){
+          emailExist = true;
+        }
+      });
+
+      if(emailExist){
+        alert("Email already exist. Please Login.");
+        return false;
+      }
+    }
+
+    let objDetails = {
+      Name: document.querySelector("#fullname").value,
+      Email: document.querySelector("#email").value,
+      Password: document.querySelector("#password").value,
+    };
+
+    details.push(objDetails);
+
+    localStorage.setItem("fromData", JSON.stringify(details));
+
+    alert("Signup successfully!");
+    location.href = 'login.html';
+  }
+</script>

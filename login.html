@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DNA Sign In</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
+      body{
+        background-color: #ffde2f;
+      }
+      
+      .d {
+        display: block;
+        height: 80px;
+        background-color: ffde2f;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      form {
+        /* border: 1px solid blue; */
+        background-color: rgb(235, 231, 133);
+        width: 30%;
+        margin: auto;
+        padding: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 15px;
+      }
+      input[type="email"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        resize: vertical;
+      }
+      h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+      form > label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -10px;
+        font-weight: 500;
+        color: gray;
+      }
+      a {
+        text-decoration: none;
+        color: #017afe;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: gray;
+        border-radius: 5px;
+        border: none;
+        background-color: #e8eaed;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
+      button {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 1px solid #d1d5db;
+        border-radius: 5px;
+      }
+
+      button > div :first-child {
+        margin-bottom: 0px;
+        margin-right: 5px;
+      }
+      button > div:last-child {
+        margin-left: 5px;
+        font-weight: 650;
+      }
+
+      button + div {
+        width: 65%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        font-weight: 550;
+      }
+      form + p {
+        text-align: center;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        color: gray;
+      }
+      input[type="submit"] {
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: orangered;
+        color:rgb(11, 9, 9);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="d" src="https://english.cdn.zeenews.com/static/apprun/dna/icons/logodna.png" alt="DNA logo" />
+    <form action="">
+      <h3>Login Here </h3>
+      <br />
+      <label for="">Email</label> <br />
+      <input type="email" placeholder="Enter email" id="email" name="email" />
+      <br />
+      <label for=""
+        >Password
+        <div>
+          <a
+            href="https://sso.masaischool.com/forgot-password/"
+            target="_blank"
+          >
+            <div>Forgot password?</div>
+          </a>
+        </div> </label
+      ><br />
+      <input
+        type="password"
+        placeholder="Enter password"
+        id="password"
+        name="password"
+      />
+      <br />
+      <br />
+      <input type="submit" value="Login" />
+
+      <button>
+        <div>
+          <img src="https://sso.masaischool.com/google.svg" alt="google logo" />
+        </div>
+        <div>CONTINUE WITH GOOGLE</div>
+      </button>
+
+      <div>
+        <p>Don't have an account?</p>
+        <p><a href="index.html">Sign Up</a></p>
+      </div>
+    </form>
+    <p>©1998-2022 INDIA DOT COM PRIVATE LIMITED, ALL RIGHTS RESERVED.</p>
+  </body>
+</html>
+
+<script>
+  let userData = JSON.parse(localStorage.getItem("fromData"));
+
+  document.querySelector("form").addEventListener("submit", checkData);
+
+  function checkData(event) {
+    event.preventDefault();
+
+    checkUserData(userData);
+
+    function checkUserData(userData) {
+      if(userData){
+        for (let i = 0; i < userData.length; i++) {
+          let Email = document.querySelector("#email").value;
+          let password = document.querySelector("#password").value;
+  
+          if (Email !== userData[i].Email) {
+            alert("Please enter your Correct Email Address");
+            return false;
+          } else if (password !== userData[i].Password) {
+            alert("Please enter your Correct Password");
+            return false;
+          } else {
+            if (
+              Email === userData[i].Email &&
+              password === userData[i].Password
+            ) {
+              localStorage.setItem("sessionData", JSON.stringify({
+                Name: userData[i].Name,
+                Email: userData[i].Email,
+                isLoggedIn: true,
+              }));
+              alert("Login Successfully");
+              window.location.href = 'home.html';
+              return false;
+            } else {
+              alert("Login Failed");
+              return false;
+            }
+          }
+        }
+      } else {
+        alert("Please enter your Correct Email Address");
+      }
+    }
+  }
+</script>
