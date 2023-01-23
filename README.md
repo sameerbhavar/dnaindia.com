@@ -12,7 +12,7 @@ Developed and designed the website using HTML, CSS and Java Script.
   - Sameer Bhavar
   - Sanket Wankhede
   - Anukriti
-  - Afzal Sheikh
+  - Afzal Qureshi
   - Shekhar Suman
   
   ## Clone Snaps :-
